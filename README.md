@@ -5,38 +5,6 @@ This script performs telnet operations on multiple areas concurrently using the 
 Python 3.x
 Dependencies listed in the requirements.txt file
 
-### Usage
-Clone the repository:
-
-bash
-Copy code
-git clone https://github.com/yourusername/your-repository.git
-Install dependencies:
-
-bash
-Copy code
-pip install -r requirements.txt
-Update the areas list in the script (your_script.py) with the details of the areas you want to perform telnet operations on.
-
-Run the script:
-
-bash
-Copy code
-python your_script.py
-
-
-### Folder Structure
-lua
-Copy code
-project_folder/
-|-- your_script.py
-|-- fungsi/
-|   |-- __init__.py
-|   |-- telnet_functions.py
-|   |-- additional_functions.py
-|-- README.md
-|-- requirements.txt
-
 ### Configuration
 areas: A list of dictionaries, each containing the connection details (host, port, username, password) for a specific area.
 
@@ -55,7 +23,6 @@ The total execution time of the script is calculated and printed at the end.
 
 ### Error Handling
 The script handles exceptions during telnet operations and prints an error message if any operation fails.
-
 
 ### Notes
 Ensure that the necessary functions (telnetin, telnetin_customer_detail, etc.) are defined in the telnet_functions.py file.
