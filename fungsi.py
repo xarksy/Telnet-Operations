@@ -1,4 +1,3 @@
-
 import time
 import re
 from telnetlib import Telnet
