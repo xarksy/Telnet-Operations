@@ -1,5 +1,5 @@
 # Telnet Operations with ThreadPoolExecutor
-This script performs telnet operations on multiple areas concurrently using the ThreadPoolExecutor from the concurrent.futures module. The telnet operations include retrieving information and updating files for different areas.
+This script performs telnet operations on multiple areas concurrently using the ThreadPoolExecutor from the ### concurrent.futures module. The telnet operations include retrieving information and updating files for different areas.
 
 ### Prerequisites
 Python 3.x
