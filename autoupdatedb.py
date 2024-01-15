@@ -1,24 +1,22 @@
 import sqlite3
 import os
-import re
 from datetime import datetime
 import shutil
 
 
-current_dir = os.getcwd()
+# Function to create directory if it does not exist
+def create_directory(directory):
+    if not os.path.isdir(directory):
+        os.makedirs(directory)
 
-# checking if the directory demo_folder2
-# exist or not.
-if not os.path.isdir("rekapan"):
-    os.makedirs("rekapan")
-
-if not os.path.isdir("hasil"):
-    os.makedirs("hasil")
+# Creating necessary directories
+create_directory("rekapan")
+create_directory("hasil")
 
 
-def saving_file(ipnya):
+def saving_file(ipnya, portnya):
     ipnya = ipnya.replace('.', '-')
-    filename_hasilssh = r'rekapan/' + ipnya + ' ' + \
+    filename_hasilssh = r'rekapan/' + ipnya + portnya + ' ' + \
         datetime.today().strftime('%d-%m-%Y %I-%M %p') + '.db'
     con = sqlite3.connect(filename_hasilssh)
 
@@ -32,17 +30,17 @@ def saving_file(ipnya):
             redamancust text,
             vendorid text, version text, equipmentid text, connection text)  ''')
 
-    return cur, con, filename_hasilssh, ipnya
+    return cur, con, filename_hasilssh, ipnya, portnya
 
 
-def updating_file(filename, ipnya):
+def updating_file(filename, ipnya, portnya):
     try:
-        os.remove("hasil/" + ipnya + " main.db")
+        os.remove("hasil/" + ipnya + portnya + " main.db")
     except:
         pass
     wew = shutil.copy2(filename, 'hasil')
     print(wew)
-    new_file = os.path.join("hasil/", ipnya + " main.db")
+    new_file = os.path.join("hasil/", ipnya + portnya + " main.db")
     os.rename(filename, new_file)
     shutil.copy2(wew, 'rekapan')
     os.remove(wew)
