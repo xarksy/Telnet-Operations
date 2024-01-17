@@ -29,6 +29,4 @@ Ensure that the necessary functions (telnetin, telnetin_customer_detail, etc.) a
 Customize the areas list with the specific connection details for the areas you want to operate on.
 
 ### Author
-Your Sandra
-Email: your.email@example.com
-Feel free to reach out for any questions or concerns.
+Sandra
